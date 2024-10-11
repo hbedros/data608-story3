@@ -99,13 +99,17 @@ base_map <- plot_usmap(data = plot_data, values = "likert_score", regions = "sta
   ) +
   theme_void() +
   theme(
-    legend.position = "bottom",  # Move legend to the bottom
-    legend.title = element_text(size = 10),  # Reduce the size of the legend title
-    legend.text = element_text(size = 8),  # Reduce the size of the legend text
-    legend.key.size = unit(0.5, "cm"),  # Make the legend boxes smaller
+    legend.position = "right", 
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 8),  
+    legend.key.size = unit(0.3, "cm"),
+    legend.box = "horizontal",
     plot.title = element_text(size = 24, face = "bold", hjust = 0.5),
     plot.subtitle = element_text(size = 20, face = "italic", hjust = 0.5),
-    plot.caption = element_text(size = 10, hjust = 0, margin = margin(t = 10))
+    plot.caption = element_text(size = 10, hjust = 0, margin = margin(t = 10)),
+    legend.margin = margin(t = 5),
+    legend.spacing.x = unit(0.3, 'cm'),
+    legend.box.margin = margin(10, 10, 10, 10) 
   )
 
 map_with_labels <- base_map +
@@ -145,7 +149,7 @@ final_map <- map_with_labels +
     plot.tag.position = c(0.5, 0.05), 
     legend.title = element_text(size = 14),
     legend.text = element_text(size = 12),
-    plot.margin = margin(t = 20, r = 20, b = 30, l = 20)  
+    plot.margin = margin(t = 20, r = 10, b = 30, l = 20)  
   )
 
 
